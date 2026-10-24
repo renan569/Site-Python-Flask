@@ -21,9 +21,9 @@ from werkzeug.security import (
 )
 
 
-# ==========================================
+
 # CONFIGURAÇÃO DO FLASK
-# ==========================================
+
 
 app = Flask(__name__)
 
@@ -36,9 +36,9 @@ app.config["SECRET_KEY"] = os.environ.get(
 CSRFProtect(app)
 
 
-# ==========================================
+
 # CONFIGURAÇÃO DO BANCO DE DADOS
-# ==========================================
+
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -74,9 +74,9 @@ def criar_tabela():
 criar_tabela()
 
 
-# ==========================================
+
 # PROTEÇÃO DE ROTAS
-# ==========================================
+
 
 def login_obrigatorio(funcao):
 
@@ -97,9 +97,9 @@ def login_obrigatorio(funcao):
     return verificar_login
 
 
-# ==========================================
+
 # PÁGINA INICIAL
-# ==========================================
+
 
 @app.route("/")
 def inicio():
@@ -110,9 +110,9 @@ def inicio():
     return redirect(url_for("login"))
 
 
-# ==========================================
+
 # CADASTRO DE USUÁRIOS
-# ==========================================
+
 
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
@@ -190,9 +190,9 @@ def cadastro():
     return render_template("cadastro.html")
 
 
-# ==========================================
+
 # LOGIN DE USUÁRIOS
-# ==========================================
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -265,9 +265,9 @@ def login():
     return render_template("login.html")
 
 
-# ==========================================
+
 # PÁGINA DO PORTFÓLIO
-# ==========================================
+
 
 @app.route("/pagina")
 @login_obrigatorio
@@ -304,9 +304,9 @@ def pagina():
     )
 
 
-# ==========================================
+
 # ENCERRAR SESSÃO
-# ==========================================
+
 
 @app.route("/sair", methods=["POST"])
 @login_obrigatorio
@@ -322,9 +322,9 @@ def sair():
     return redirect(url_for("login"))
 
 
-# ==========================================
+
 # EXECUTAR A APLICAÇÃO
-# ==========================================
+
 
 if __name__ == "__main__":
 

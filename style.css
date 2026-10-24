@@ -1,0 +1,336 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #0b1020;
+    --card: #141c30;
+    --text: #f8fafc;
+    --muted: #9ba9c4;
+    --blue: #6385ff;
+    --cyan: #43d9d3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(ellipse at 15% 15%, #233c69 0, transparent 40%),
+        radial-gradient(ellipse at 90% 85%, #153f49 0, transparent 38%),
+        var(--bg);
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 38px;
+    border: 1px solid #ffffff18;
+    border-radius: 24px;
+    background: #141c30eF;
+    box-shadow: 0 25px 80px #00000045;
+    backdrop-filter: blur(18px);
+    animation: aparecer .7s ease both;
+    transition: border-color .3s, box-shadow .3s;
+}
+
+.auth-card:hover {
+    border-color: #6385ff75;
+    box-shadow: 0 25px 85px #385bd02b;
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 22px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    color: white;
+    font-size: 27px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    box-shadow: 0 8px 30px #6385ff45;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.auth-card h1 {
+    font-size: clamp(24px, 5vw, 30px);
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    color: var(--muted);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 12px 0 28px;
+}
+
+label {
+    display: block;
+    margin: 18px 0 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #dce5f8;
+}
+
+input:not([type="hidden"]) {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #34415b;
+    border-radius: 11px;
+    outline: none;
+    color: white;
+    background: #0c1425;
+    font: inherit;
+    font-size: 14px;
+    transition: border-color .25s, box-shadow .25s;
+}
+
+input::placeholder {
+    color: #72809a;
+}
+
+input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px #6385ff20;
+}
+
+button {
+    width: 100%;
+    margin-top: 24px;
+    padding: 14px;
+    border: none;
+    border-radius: 11px;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    background: linear-gradient(110deg, #526fff, #398fdc);
+    cursor: pointer;
+    transition: transform .2s, filter .2s, box-shadow .2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.12);
+    box-shadow: 0 10px 28px #526fff35;
+}
+
+button:active {
+    transform: scale(.98);
+}
+
+.footer-text {
+    margin-top: 26px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 13px;
+}
+
+a {
+    color: #83a4ff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--cyan);
+    text-decoration: underline;
+}
+
+.alert {
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.alert.erro {
+    color: #ffc3cb;
+    border: 1px solid #f8717140;
+    background: #ef444418;
+}
+
+.alert.sucesso {
+    color: #a7f3d0;
+    border: 1px solid #34d39940;
+    background: #10b98118;
+}
+
+/* Painel privado */
+
+.dashboard-container {
+    width: min(1100px, 100% - 40px);
+    margin: auto;
+    padding: 28px 0 60px;
+    animation: aparecer .6s ease both;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 28px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+}
+
+.small-logo {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    font-size: 20px;
+    border-radius: 12px;
+}
+
+.logout-button {
+    width: auto;
+    margin: 0;
+    padding: 11px 20px;
+    border: 1px solid #ffffff25;
+    background: #ffffff0b;
+}
+
+.welcome-card {
+    position: relative;
+    overflow: hidden;
+    padding: 40px;
+    border: 1px solid #ffffff18;
+    border-radius: 22px;
+    background: linear-gradient(120deg, #1b2c50, #172c3c);
+}
+
+.welcome-card h1 {
+    margin: 15px 0 10px;
+    font-size: clamp(28px, 5vw, 42px);
+    overflow-wrap: anywhere;
+}
+
+.welcome-card > p:last-child {
+    color: #bac8df;
+    line-height: 1.7;
+}
+
+.eyebrow {
+    color: var(--cyan);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 15px #4ade8080;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.info-card {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid #ffffff15;
+    border-radius: 18px;
+    background: #141c30c9;
+    transition: transform .25s, border-color .25s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: #6385ff70;
+}
+
+.card-icon {
+    font-size: 25px;
+}
+
+.info-card h2 {
+    margin: 18px 0 10px;
+    font-size: 17px;
+}
+
+.info-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 650px) {
+    .auth-card {
+        padding: 28px 22px;
+    }
+
+    .dashboard-container {
+        width: calc(100% - 28px);
+        padding-top: 18px;
+    }
+
+    .welcome-card {
+        padding: 28px 22px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
