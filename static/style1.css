@@ -1,0 +1,525 @@
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fundo: #080b16;
+    --fundo-card: #11182b;
+    --cor-texto: #f1f5f9;
+    --cor-secundaria: #aab5ca;
+    --azul: #38bdf8;
+    --roxo: #a78bfa;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--cor-texto);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+/* =====================================
+   CABEÇALHO
+===================================== */
+
+.cabecalho {
+    width: 100%;
+    min-height: 75px;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: rgba(8, 11, 22, 0.92);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--azul);
+    margin-left: 5px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.menu a {
+    color: var(--cor-secundaria);
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--azul);
+}
+
+/* =====================================
+   APRESENTAÇÃO
+===================================== */
+
+.inicio {
+    min-height: 85vh;
+    padding: 90px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+
+    background:
+        radial-gradient(
+            circle at 85% 35%,
+            rgba(56, 189, 248, 0.10),
+            transparent 35%
+        );
+}
+
+.inicio-conteudo {
+    max-width: 650px;
+}
+
+.subtitulo {
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.inicio h1 {
+    font-size: clamp(32px, 4vw, 55px);
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.inicio h1 span,
+.secao h2 span {
+    color: var(--azul);
+}
+
+.descricao {
+    max-width: 570px;
+    color: var(--cor-secundaria);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* =====================================
+   BOTÕES
+===================================== */
+
+.botao {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+
+    background: linear-gradient(120deg, var(--azul), var(--roxo));
+    color: #080b16;
+
+    font-weight: bold;
+    border: 1px solid transparent;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.botao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.25);
+}
+
+.botao-secundario {
+    background: transparent;
+    color: var(--azul);
+    border-color: var(--azul);
+}
+
+.botao-secundario:hover {
+    background: rgba(56, 189, 248, 0.10);
+}
+
+/* =====================================
+   FOTO DE PERFIL
+===================================== */
+
+.foto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.foto-brilho {
+    width: 280px;
+    height: 280px;
+    padding: 6px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        var(--azul),
+        var(--roxo),
+        #22c55e
+    );
+
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.25);
+
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.foto-perfil {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    background: var(--fundo-card);
+    border: 4px solid var(--fundo);
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =====================================
+   SEÇÕES
+===================================== */
+
+.secao {
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.secao h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 25px;
+}
+
+.texto-secao {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--cor-secundaria);
+}
+
+/* =====================================
+   TECNOLOGIAS
+===================================== */
+
+.tecnologias-lista {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.tecnologia {
+    padding: 12px 22px;
+
+    background: var(--fundo-card);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 10px;
+
+    color: var(--azul);
+    font-weight: bold;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s;
+}
+
+.tecnologia:hover {
+    transform: translateY(-5px);
+    border-color: var(--azul);
+}
+
+/* =====================================
+   CARTÕES DE PROJETOS
+===================================== */
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.projeto-card {
+    padding: 30px;
+    text-align: left;
+
+    background: var(--fundo-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--azul);
+    box-shadow: 0 10px 35px rgba(56, 189, 248, 0.10);
+}
+
+.projeto-icone {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.projeto-card h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.projeto-card p {
+    color: var(--cor-secundaria);
+    margin-bottom: 20px;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 5px 10px;
+
+    background: rgba(56, 189, 248, 0.10);
+    border-radius: 6px;
+
+    color: var(--azul);
+    font-size: 12px;
+}
+
+/* =====================================
+   CONTATO
+===================================== */
+
+.contato .botao {
+    margin-top: 25px;
+}
+
+/* =====================================
+   RODAPÉ
+===================================== */
+
+footer {
+    padding: 25px 8%;
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--cor-secundaria);
+    font-size: 13px;
+}
+
+/* =====================================
+   BOTÃO DE AJUDA
+===================================== */
+
+.botao-ajuda {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 1100;
+
+    padding: 14px 20px;
+
+    background: linear-gradient(120deg, var(--azul), var(--roxo));
+    color: #080b16;
+
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+    box-shadow: 0 5px 25px rgba(56, 189, 248, 0.25);
+}
+
+.mensagem-ajuda {
+    position: fixed;
+    right: 25px;
+    bottom: 85px;
+    z-index: 1100;
+
+    max-width: 280px;
+    padding: 18px;
+
+    background: var(--fundo-card);
+    border: 1px solid var(--azul);
+    border-radius: 12px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.mensagem-ajuda[hidden] {
+    display: none;
+}
+
+/* =====================================
+   ANIMAÇÕES DE ENTRADA
+===================================== */
+
+.animar {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.animar.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 850px) {
+
+    .cabecalho {
+        flex-direction: column;
+        padding: 18px 5%;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .inicio {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 6%;
+        gap: 35px;
+    }
+
+    .inicio-conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .descricao {
+        max-width: 600px;
+    }
+
+    .botoes {
+        justify-content: center;
+    }
+
+    .foto-brilho {
+        width: 220px;
+        height: 220px;
+    }
+
+    .secao {
+        padding: 65px 6%;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .menu {
+        gap: 8px 14px;
+        font-size: 13px;
+    }
+
+    .inicio h1 {
+        font-size: 32px;
+    }
+
+    .foto-brilho {
+        width: 180px;
+        height: 180px;
+    }
+
+    .projetos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projeto-card {
+        padding: 23px;
+    }
+
+    .botao-ajuda {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .mensagem-ajuda {
+        right: 15px;
+        bottom: 75px;
+    }
+}
+
+/* Respeita a preferência por menos animações */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .animar {
+        opacity: 1;
+        transform: none;
+    }
+}

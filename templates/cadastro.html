@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="auth-container">
+        <section class="auth-card">
+            <div class="logo">N</div>
+            <h1>Crie sua conta</h1>
+            <p class="subtitle">Comece sua experiência com a gente.</p>
+
+            {% with mensagens = get_flashed_messages(with_categories=true) %}
+                {% for categoria, mensagem in mensagens %}
+                    <div class="alert {{ categoria }}">{{ mensagem }}</div>
+                {% endfor %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('cadastro') }}">
+                <input type="hidden" name="csrf_token"
+                       value="{{ csrf_token() }}">
+
+                <label for="nome">Nome completo</label>
+                <input id="nome" name="nome" type="text"
+                       placeholder="Seu nome" maxlength="100"
+                       autocomplete="name" required>
+
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email"
+                       placeholder="voce@exemplo.com"
+                       maxlength="254" autocomplete="email" required>
+
+                <label for="senha">Senha</label>
+                <input id="senha" name="senha" type="password"
+                       placeholder="Mínimo de 8 caracteres"
+                       minlength="8" autocomplete="new-password" required>
+
+                <button type="submit">Criar minha conta</button>
+            </form>
+
+            <p class="footer-text">
+                Já tem uma conta?
+                <a href="{{ url_for('login') }}">Entrar</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>

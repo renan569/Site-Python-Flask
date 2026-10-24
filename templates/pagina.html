@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Portfólio | Desenvolvedor</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style1.css') }}">
+</head>
+
+<body>
+
+    <!-- MENU PRINCIPAL -->
+    <header class="cabecalho">
+
+        <a href="#inicio" class="logo">Meu<span>Portfólio</span></a>
+
+        <nav class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre mim</a>
+            <a href="#tecnologias">Tecnologias</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+        <section id="inicio" class="inicio">
+
+            <div class="inicio-conteudo">
+
+                <p class="subtitulo">OLÁ! SEJA BEM-VINDO AO MEU PORTFÓLIO</p>
+
+                <h1>
+                    Olá, eu sou um<br>
+                    <span>Desenvolvedor em evolução.</span>
+                </h1>
+
+                <p class="descricao">
+                    Desenvolvo projetos utilizando programação para
+                    transformar ideias em soluções digitais.
+                    Estou sempre aprendendo novas tecnologias
+                    e aprimorando minhas habilidades.
+                </p>
+
+                <div class="botoes">
+                    <a href="#projetos" class="botao">Ver meus projetos</a>
+                    <a href="#sobre" class="botao botao-secundario">
+                        Sobre mim
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- FOTO DE PERFIL -->
+            <div class="foto-container">
+
+                <div class="foto-brilho">
+                    <img
+                        src="{{ url_for('static', filename='foto_menos_1MB.jpg') }}"
+                        alt="Foto de perfil do desenvolvedor"
+                        class="foto-perfil"
+                    >
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SOBRE MIM -->
+        <section id="sobre" class="secao">
+
+            <p class="subtitulo">CONHEÇA MINHA TRAJETÓRIA</p>
+
+            <h2>Sobre <span>mim</span></h2>
+
+            <p class="texto-secao">
+                Sou estudante de programação e desenvolvo projetos
+                práticos para aprofundar meus conhecimentos em
+                desenvolvimento web e programação.
+
+                Tenho interesse em criar aplicações, desenvolver
+                interfaces e aprender a trabalhar com bancos de dados,
+                lógica de programação e tecnologias web.
+            </p>
+
+        </section>
+
+        <!-- TECNOLOGIAS -->
+        <section id="tecnologias" class="secao">
+
+            <p class="subtitulo">FERRAMENTAS QUE ESTUDO</p>
+
+            <h2>Minhas <span>tecnologias</span></h2>
+
+            <div class="tecnologias-lista">
+                <div class="tecnologia">Python</div>
+                <div class="tecnologia">Flask</div>
+                <div class="tecnologia">HTML5</div>
+                <div class="tecnologia">CSS3</div>
+                <div class="tecnologia">JavaScript</div>
+                <div class="tecnologia">SQLite</div>
+                <div class="tecnologia">Git</div>
+            </div>
+
+        </section>
+
+        <!-- PROJETOS -->
+        <section id="projetos" class="secao">
+
+            <p class="subtitulo">MEU TRABALHO</p>
+
+            <h2>Meus <span>projetos</span></h2>
+
+            <div class="projetos-container">
+
+                <article class="projeto-card">
+                    <div class="projeto-icone">🐍</div>
+
+                    <h3>Projetos em Python</h3>
+
+                    <p>
+                        Aplicações para praticar lógica de programação,
+                        funções, estruturas condicionais e orientação
+                        a objetos.
+                    </p>
+
+                    <span class="etiqueta">Python · POO</span>
+                </article>
+
+                <article class="projeto-card">
+                    <div class="projeto-icone">🌐</div>
+
+                    <h3>Desenvolvimento Web</h3>
+
+                    <p>
+                        Criação de páginas web com interfaces
+                        responsivas, estilização e interatividade.
+                    </p>
+
+                    <span class="etiqueta">HTML · CSS · JavaScript</span>
+                </article>
+
+                <article class="projeto-card">
+                    <div class="projeto-icone">🔐</div>
+
+                    <h3>Sistema de Login</h3>
+
+                    <p>
+                        Projeto web com Flask e SQLite para estudar
+                        cadastro de usuários, autenticação e
+                        integração com banco de dados.
+                    </p>
+
+                    <span class="etiqueta">Flask · SQLite</span>
+                </article>
+
+                <article class="projeto-card">
+                    <div class="projeto-icone">👁️</div>
+
+                    <h3>Reconhecimento Facial</h3>
+
+                    <p>
+                        Projeto experimental em Python para estudar
+                        visão computacional, webcam e reconhecimento
+                        facial.
+                    </p>
+
+                    <span class="etiqueta">Python · DeepFace</span>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="secao contato">
+
+            <p class="subtitulo">VAMOS CONVERSAR?</p>
+
+            <h2>Entre em <span>contato</span></h2>
+
+            <p class="texto-secao">
+                Estou aberto a oportunidades de aprendizado,
+                desenvolvimento de projetos e crescimento profissional.
+            </p>
+
+            <!-- Substitua pelo seu perfil real do LinkedIn -->
+            <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="botao"
+            >
+                Meu LinkedIn
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Meu Portfólio. Desenvolvido com HTML, CSS e Flask.</p>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE -->
+    <button
+        id="botao-ajuda"
+        class="botao-ajuda"
+        type="button"
+        aria-label="Mostrar informações de ajuda"
+    >
+        Posso ajudar?
+    </button>
+
+    <div id="mensagem-ajuda" class="mensagem-ajuda" hidden>
+        Explore meus projetos e tecnologias para conhecer meu trabalho!
+    </div>
+
+    <script>
+        const botaoAjuda = document.getElementById("botao-ajuda");
+        const mensagemAjuda = document.getElementById("mensagem-ajuda");
+
+        botaoAjuda.addEventListener("click", function () {
+            mensagemAjuda.hidden = !mensagemAjuda.hidden;
+        });
+
+        // Anima os elementos quando entram na área visível.
+        const elementos = document.querySelectorAll(
+            ".secao, .projeto-card, .inicio-conteudo, .foto-container"
+        );
+
+        if ("IntersectionObserver" in window) {
+            const observador = new IntersectionObserver((entradas) => {
+                entradas.forEach((entrada) => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add("visivel");
+                        observador.unobserve(entrada.target);
+                    }
+                });
+            }, {
+                threshold: 0.12
+            });
+
+            elementos.forEach((elemento) => {
+                elemento.classList.add("animar");
+                observador.observe(elemento);
+            });
+        } else {
+            elementos.forEach((elemento) => {
+                elemento.classList.add("visivel");
+            });
+        }
+    </script>
+
+</body>
+</html>
